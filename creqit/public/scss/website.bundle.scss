@@ -1,0 +1,140 @@
+@import "./website/index";
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+body[data-path="me"],
+body[data-path^="update-profile"],
+body[data-path="update-password"],
+body[data-path="third_party_apps"] {
+	// @include media-breakpoint-up(sm) {
+	//   background-image: url("/assets/creqit/images/pattern.svg");
+	//   background-size: cover; /* Resmi sayfa boyutuna göre ayarlar */
+	//   background-position: center; /* Resmi ortalar */
+	//   background-repeat: no-repeat;
+	// }
+	background-color: var(--creqit--background-white) !important;
+	box-shadow: 2px 4px 20px 12px #0C183D08;
+	#page-update-password,
+	#page-third_party_apps,
+	#page-me{
+		.page-content-wrapper{
+			position: relative;
+			top: 120px;
+		}
+	}
+	#page-update-password{
+		.portal-container{
+			max-width: 382px !important;
+			box-shadow: none !important; 
+			padding: 0 !important;
+			.portal-section{
+				flex-direction: column;
+				&.head {
+					svg {
+					  margin-bottom: 24px;
+					}
+				}
+				#reset-password{
+					label{
+						@include creqit-text("label", "m", "medium");
+						color: var(--creqit-text-muted-600);
+					}
+					input{
+						height: 48px !important;
+					}
+					.form-group{
+						position: relative;
+						span{
+							position: absolute;
+							top: 44px;
+							right: 11px;
+						}
+					}
+				}
+			}
+			
+		}
+	}
+}
+/*#UPDATES --sevval*/
+  // Bu fontu global olarak kullan
+body {
+	font-family: 'Figtree', sans-serif !important;
+}
+/**/
+body[data-path="me"] {
+	#page-me{
+		.page_content .portal-footer a{
+			height: 40px;
+			color: #fff;
+			border-radius: 5px;
+			padding: 10px 25px;
+			//font-family: 'Lato', sans-serif;/*#UPDATES --sevval*/
+			font-weight: 500;
+			background: transparent;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			position: relative;
+			display: inline-block;
+			 box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+			 7px 7px 20px 0px rgba(0,0,0,.1),
+			 4px 4px 5px 0px rgba(0,0,0,.1);
+			outline: none;
+			border: none;
+			background: #0C0B35;/*#UPDATES --sevval*/
+  			background: linear-gradient(0deg, #0C0B35 0%, #1A198A 100%);/*#UPDATES --sevval*/
+			  &:hover {
+				color: #0C0B35;/*#UPDATES --sevval*/
+				background: transparent;
+				box-shadow:none;
+				svg{
+					stroke: #0C0B35 !important;/*#UPDATES --sevval*/
+				}
+			  }
+			  &:before,
+			  &:after{
+				content:'';
+				position:absolute;
+				top:0;
+				right:0;
+				height:2px;
+				width:0;
+				background: #0C0B35;/*#UPDATES --sevval*/
+				box-shadow:
+				 -1px -1px 5px 0px #fff,
+				 7px 7px 20px 0px #0003,
+				 4px 4px 5px 0px #0002;
+				transition:400ms ease all;
+			  }
+			  &:after{
+				right:inherit;
+				top:inherit;
+				left:0;
+				bottom:0;
+			  }
+			  &:hover:before,
+			  &:hover:after{
+				width:100%;
+				transition:800ms ease all;
+			  }
+				svg {
+					stroke: #fff;
+				}
+		}
+		
+		.page_content .portal-items{
+			border: none;
+			border-radius: 0;
+			.portal-section {
+				padding: 10px 20px;
+				border: 1px solid var(--border-color);
+				border-radius: 24px;
+				margin: 10px;
+				&:last-child {
+					border: 1px solid var(--border-color);
+				}
+			}
+			
+		}
+	}
+  }
+
+  

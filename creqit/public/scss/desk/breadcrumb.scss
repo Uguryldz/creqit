@@ -1,0 +1,48 @@
+.breadcrumb {
+	padding-left: 0;
+	padding-right: 0;
+	background-color: white;
+	@include get_textstyle("sm", "regular");
+}
+/*! This comment will be included even in compressed mode. */
+#navbar-breadcrumbs {
+	//@include get_textstyle("sm", "regular");
+	@include creqit-heading("m");
+	a {
+		margin-right: 10px;
+		color: var(--creqit-text-disabled-300);
+		&:before {
+			content: #{"/*!rtl:var(--left-arrow-svg);*/"}var(--right-arrow-svg);
+			display: inline-block;
+			margin-right: 10px;
+		}
+
+	}
+
+	li:first-child a:before {
+		// no angle before first item
+		content: none;
+	}
+
+	li.disabled {
+		a {
+			//color: var(--gray-600);
+			color: var(--creqit-text-normal-500);
+			pointer-events: none;
+			&:before {
+				content: #{"/*!rtl:var(--left-arrow-svg);*/"}var(--right-arrow-svg);
+				color: var(--creqit-text-normal-500);
+			}
+		}
+	}
+}
+//navbar-breadcrumbs tıklanamaz olması için yapılan düzenleme <<sevval
+#navbar-breadcrumbs li:not(:last-child) a {
+	//pointer-events: none; 
+	color: gray; 
+	text-decoration: none; 
+  }
+
+//   #navbar-breadcrumbs li:last-child a {
+// 	pointer-events: auto;
+//   }

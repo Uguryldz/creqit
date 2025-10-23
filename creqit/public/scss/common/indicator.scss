@@ -1,0 +1,113 @@
+.indicator,
+.indicator-pill,
+.indicator-pill-right,
+.indicator-pill-round {
+	display: inline-flex;
+	align-items: center;
+}
+div.indicator-pill{
+	padding: 3px 8px;
+}//creqit.v1.sevval//
+
+.indicator::before {
+	content: "";
+	height: 8px;
+	width: 8px;
+	border-radius: var(--border-radius);
+	margin: 0px 8px 0px 0px;
+}
+.indicator-pill,
+.indicator-pill-right {
+	//@include get_textstyle("sm", "regular");
+	@include creqit-text(label, "s", "medium");//creqit.v1.sevval//
+	//padding: 4.5px 8px;
+	padding: 0;//creqit.v1.sevval//
+	font-weight: var(--weight-regular) !important;//creqit.v1.sevval//
+	border-radius: var(--border-radius-full);
+	height: 20px;
+	&:has(> span) {
+		padding: 3px 8px;//creqit.v1.sevval//
+	}
+}
+//creqit.v1.sevval//
+	.indicator-icon{
+		position: relative;
+		top: 2px;
+		.icon{
+			position: relative;
+			left: 2px;
+		}
+	}
+	.indicator-icon-left{
+		justify-content: center;
+		flex-direction: row;
+	}
+	.indicator-icon-right{
+		justify-content: center;
+		flex-direction: row-reverse;
+	}
+//**********/
+
+.indicator-pill-round {
+	@include get_textstyle("sm", "regular");
+	justify-content: center;
+	border-radius: 50%;
+	width: 24px;
+	height: 24px;
+}
+
+.indicator-pill:not(.no-indicator-dot)::before,
+.indicator-pill-right::after {
+	content: "";
+	display: inline-table;	
+	// height: 6px;
+	// width: 6px;
+	height: 4px;//creqit.v1.sevval//
+	width: 4px;//creqit.v1.sevval//
+	border-radius: 50%;
+	margin-right: 6px;
+}
+
+.indicator-pill.no-margin::before,
+.indicator-pill-right.no-margin::after {
+	margin-right: 0px;
+}
+
+.indicator-pill-right::after {
+	margin: 0 0 0 4px;
+}
+
+$indicator-colors: green, cyan, blue, orange, yellow, gray, grey, red, pink, darkgrey, purple,
+	light-blue, light-gray, primary;//creqit.v1.sevval//
+@each $color in $indicator-colors {
+	.indicator.#{"" + $color} {
+		&::before,
+		&::after {
+			background: var(--indicator-dot-#{$color});
+		}
+	}
+
+	.indicator-pill.#{"" + $color},
+	.indicator-pill-right.#{"" + $color},
+	.indicator-pill-round.#{"" + $color} {
+		background: var(--bg-#{$color});
+		color: var(--text-on-#{$color});
+		&::before,
+		&::after {
+			background: var(--text-on-#{$color});
+		}
+	}
+	.indicator {
+		--indicator-dot-#{"" + $color}: var(--text-on-#{$color});
+	}
+}
+
+.indicator.blink {
+	animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+	50% {
+		opacity: 0.5;
+	}
+}

@@ -1,0 +1,8 @@
+creqit/public/js/lib/*
+creqit/public/js/creqit/misc/tests/*
+creqit/public/js/creqit/views/test_runner.js
+creqit/core/doctype/doctype/boilerplate/*
+creqit/core/doctype/report/boilerplate/*
+creqit/public/js/creqit/class.js
+creqit/templates/includes/*
+creqit/www/website_script.js

@@ -1,0 +1,256 @@
+.center-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn {
+	border: none;
+	height: 40px;//creqit.v1.sevval//
+	padding: 8px 10px;//creqit.v1.sevval//
+	@include creqit-text(label, s, medium);//creqit.v1.sevval//
+	&:not(.btn-md):not(.btn-lg) {
+		padding: 8px 10px;//creqit.v1.sevval//
+	}
+	border-radius: var(--border-radius);
+	box-shadow: none;
+	//creqit.v1.sevval////****************/
+	//@include get_textstyle("base", "regular");
+
+	// &:active {
+	// 	// override #dadada that comes from bootstrap (probably) to support dark theme.
+	// 	color: var(--text-color) !important;
+	// 	background-color: var(--control-bg) !important;
+	// 	box-shadow: var(--focus-default) !important;
+	// }
+	//****************/
+	&.icon-btn {
+		height: var(--btn-height) !important;//creqit.v1.sevval//
+		width: var(--btn-height) !important;//creqit.v1.sevval//
+		//border-radius: 50% !important;//creqit.v1.sevval//
+		padding: 0px;
+		@extend .center-content;
+		
+	}
+}
+
+.btn-secondary-dark {
+	@include button-variant(
+		$background: $gray-600,
+		$border: $gray-600,
+		$hover-background: lighten($gray-600, 1%),
+		$hover-border: $gray-600,
+		$active-background: lighten($gray-600, 1%),
+		$active-border: darken($gray-600, 12.5%)
+	);
+
+	color: $white;
+	&:hover,
+	&:active,
+	&:focus {
+		color: $white;
+	}
+	.icon {
+		--icon-stroke: currentColor;
+	}
+}
+
+.btn-primary-light {
+	@include button-variant(
+		// not happy with this
+		$background: $gray-300,
+		$border: $gray-800,
+		$hover-background: $gray-200,
+		$hover-border: $gray-300,
+		$active-background: $gray-300,
+		$active-border: $gray-200
+	);
+
+	color: var(--primary);
+	&:hover,
+	&:active {
+		color: var(--primary);
+	}
+
+	&:focus {
+		box-shadow: var(--focus-default);
+	}
+}
+
+// .btn.btn-secondary {
+// 	background-color: var(--control-bg);
+// 	color: var(--text-color);
+// 	&:hover,
+// 	&:active {
+// 		background-color: var(--btn-default-hover-bg);
+// 		color: var(--text-color);
+// 	}
+// }
+
+.btn.btn-secondary,
+.btn.btn-default {
+	//background-color: var(--control-bg);
+	color: var(--btn-default-color) !important;
+	background: var(--btn-default-bg);//creqit.v1.sevval//
+	box-shadow: var(--btn-default-boxshadow)  !important;//creqit.v1.sevval//
+	&:hover{
+		background: var(--btn-default-hover-bg);//creqit.v1.sevval//
+		color: var(--btn-default-hover-text) !important;//creqit.v1.sevval//
+		box-shadow: var(--btn-default-hover-boxshadow) !important;//creqit.v1.sevval//
+	}
+	&:active,
+	&:focus {
+		color: var(--btn-default-focus-color);//creqit.v1.sevval//
+		box-shadow: var(--btn-default-focus-boxshadow) !important;//creqit.v1.sevval//
+	}
+	&:active {
+		color: var(--btn-default-focus-color);
+		background: var(--btn-default-active-bg) !important;//creqit.v1.sevval//
+		box-shadow: var(--btn-primary-active)!important;
+		//background: var(--btn-default-hover-bg);
+		//color: var(--text-color);
+	}
+	&:disabled{
+		background: var(--btn-disabled);//creqit.v1.sevval//
+		color: var(--creqit-text-disabled-300);//creqit.v1.sevval//
+		box-shadow:none;
+	}
+}
+
+.btn.btn-primary {
+	background-color: var(--btn-primary);
+	color: var(--creqit-text-white);//creqit.v1.sevval//
+	border: 1px solid;//creqit.v1.sevval//
+	border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);//creqit.v1.sevval//
+	white-space: nowrap;
+	--icon-stroke: currentColor;
+	--icon-fill-bg: var(--btn-primary);
+	//box-shadow: var(--btn-primary-boxshadow);//creqit.v1.sevval//
+	&:hover{
+		background: var(--btn-primary-hover) !important;/*#UPDATES --sevval*/
+		border: 1px solid;
+		border-image-source: var(--btn-primary-border-image-source);
+		box-shadow: var(--btn-primary-hover-boxshadow);//creqit.v1.sevval//
+	}
+	&:active,
+	&:focus {
+		background: var(--btn-primary-focus) !important;
+		box-shadow: var(--btn-primary-focus-boxshadow);//creqit.v1.sevval//
+	}
+	&:active {
+		color: var(--creqit-text-white) !important;//creqit.v1.sevval//
+		//background-color: var(--btn-primary) !important;
+		//border-color: var(--custom-300) !important;/*#UPDATES --sevval*/
+		//box-shadow: var(--custom-300) !important;/*#UPDATES --sevval*/
+		box-shadow: var(--btn-primary-active)!important;		//creqit.v1.sevval//
+	}
+	&:disabled{
+		background: var(--btn-disabled);//creqit.v1.sevval//
+		color: var(--creqit-text-disabled-300);//creqit.v1.sevval//
+		box-shadow:none;//creqit.v1.sevval//
+	}
+}
+
+.btn.btn-danger {
+	//creqit.v1.sevval//
+	//background-color: var(--danger);
+	color: var(--creqit-secondary-red-100);
+	background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(193, 199, 208, 0.02) 100%);
+	box-shadow: 0px 0px 0px 1px #0C183D14, 0px 1px 2px 0px #A4ACB93D !important;
+	&:hover{
+		background: linear-gradient(0deg, #FFFFFF, #FFFFFF),
+		linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(193, 199, 208, 0.08) 100%);
+		color: var(--creqit-secondary-red-200);
+		box-shadow: 0px 0px 0px 1px #0C183D14, 0px 1px 2px 0px #A4ACB93D;
+	}
+	&:active,
+	&:focus {
+		color: var(--creqit-secondary-red-200);
+		background: linear-gradient(0deg, #FFFFFF, #FFFFFF),
+		linear-gradient(180deg, rgba(193, 199, 208, 0.08) 0%, rgba(255, 255, 255, 0.08) 100%);
+		box-shadow: 0px 0px 0px 1px #0C183D14, 0px 1px 2px 0px #A4ACB93D;
+	}
+	&:active {
+		color: var(--creqit-secondary-red-200);
+		background: linear-gradient(0deg, #FFFFFF, #FFFFFF),
+			linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(193, 199, 208, 0.02) 100%);
+		box-shadow: 0px 0px 0px 1px #335CFF14, 0px 0px 0px 2px #FFFFFF,0px 0px 0px 3px #335CFF80,   0px 1px 2px 0px #A4ACB966;		//background: var(--btn-default-hover-bg);
+			//color: var(--text-color);
+	}
+	&:disabled{
+		background: var(--creqit-background-disabled-0);
+		color: var(--creqit-text-disabled-300);
+		box-shadow:none;
+	}
+	//****************/
+}
+
+.btn-reset {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	font-size: inherit;
+	background-color: inherit;
+	text-align: inherit;
+}
+
+[data-theme="dark"] {
+	.btn-primary-light {
+		//background-color: var(--bg-dark-gray);
+		box-shadow: none;
+		background-color: var(--creqit-dark-background);
+		color: var(--creqit-text-white);
+		box-shadow: var(--btn-default-boxshadow) !important;
+	}
+	// .btn-primary{
+	// 	color: var(--neutral-white) !important;
+	// 	background-color: var(--custom-orange-500) !important;/*#UPDATES --sevval*/
+	// 	&:active {
+	// 		color: var(--neutral-white) !important;
+	// 		background-color: var(--custom-orange-300) !important;/*#UPDATES --sevval*/
+	// 	}
+	// 	&:hover{
+	// 		background-color: var(--custom-orange-500) !important;/*#UPDATES --sevval*/
+	// 	}
+	// }
+	//creqit.v1.sevval//
+	.btn.btn-danger {
+		color: var(--creqit-text-white);
+		background: linear-gradient(0deg, #DF1C41, #DF1C41),
+		linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+		border: 1px solid;
+		border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+		box-shadow: 0px 0px 0px 1px #96132C, 0px 1px 2px 0px #96132C80;
+		&:hover{
+			background: linear-gradient(0deg, #DF1C41, #DF1C41),
+				linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%);
+			border: 1px solid;
+			border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+			color: var(--creqit-secondary-red-200);
+			box-shadow: 0px 0px 0px 1px #96132C, 0px 1px 2px 0px #96132C80;
+		}
+		&:active,
+		&:focus {
+			color: var(--creqit-text-white);
+			background: linear-gradient(0deg, #DF1C41, #DF1C41),
+				linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.16) 100%);
+			border: 1px solid;
+			border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+			box-shadow: 0px 0px 0px 1px #B71836, 0px 1px 2px 0px #710E2180;
+		}
+		&:active {
+			color: var(--creqit-text-white);
+			background: linear-gradient(0deg, #DF1C41, #DF1C41),
+				linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+			border: 1px solid;
+			border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);				
+			box-shadow: 0px 0px 0px 2px #FFFFFF,0px 0px 0px 3px #96132C80, 0px 0px 0px 1px #96132C,  0px 1px 2px 0px #96132C80;
+		}
+		&:disabled{
+			background: var(--creqit-background-disabled-0);
+			color: var(--creqit-text-disabled-300);
+			box-shadow:none;
+		}
+	}
+	//****************/
+}

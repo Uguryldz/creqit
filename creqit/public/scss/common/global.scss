@@ -1,0 +1,232 @@
+@import "../element/checkbox";
+@import "../element/radio";
+
+html,
+body {
+	height: 100%;
+	font-family: var(--font-stack);
+	font-variation-settings: "opsz" 24;
+}
+
+/* checkbox */
+.checkbox {
+	label {
+		display: inline-flex;
+		align-items: center;
+		margin-bottom: 0;
+	}
+	--checkbox-right-margin: 8px;
+
+	.label-area {
+		@include get_textstyle("sm", "medium");
+		color: var(--text-color);
+	}
+
+	.input-area,
+	.disp-area {
+		display: flex;
+	}
+}
+
+.creqit-card {
+	@include card();
+	box-shadow: none;
+	border: 1px solid var(--border-color);
+}
+
+.creqit-control[data-fieldtype="Select"].creqit-control[data-fieldname="color"] {
+	.color-select {
+		padding-left: 30px;
+	}
+
+	.color-box {
+		position: absolute;
+		top: calc(50% - 11px);
+		left: 8px;
+		width: 22px;
+		height: 22px;
+		border-radius: 5px;
+		z-index: 1;
+	}
+}
+//creqit.v1.sevval//
+.tooltip-inner{
+	background-color: var(--creqit-neutral-solid-700) !important;	
+}
+.bs-tooltip-top .arrow::before, 
+.bs-tooltip-auto[x-placement^=top] 
+.arrow::before{
+	border-top-color: var(--creqit-neutral-solid-700) !important;	
+}
+
+.creqit-control[data-fieldtype="Link"] .control-input,
+.creqit-control[data-fieldtype="Link"].form-group {
+	position: relative;
+	input{
+		padding-left: 33px;
+	}
+	.select-icon {
+		position: absolute;
+		right: 12px;
+		top: 8px;//creqit.v1.sevval//
+	}
+	.search-icon{
+		position: absolute;
+		top: 8px;//creqit.v1.sevval//
+		left: 8px;
+	}
+}
+.creqit-control[data-fieldtype="Link"].form-group {
+	input{
+		padding-left: 30px !important;
+	}
+	.search-icon{
+		left: 8px !important;
+	}
+}//creqit.v1.sevval//
+.creqit-control[data-fieldtype="Dynamic Link"] .control-input,
+.creqit-control[data-fieldtype="Dynamic Link"].form-group {
+	position: relative;
+	input{
+		padding-left: 33px;
+	}
+	.select-icon {
+		position: absolute;
+		right: 12px;
+		top: 8px;//creqit.v1.sevval//
+	}
+	.search-icon{
+		position: absolute;
+		top: 8px;//creqit.v1.sevval//
+		left: 8px;
+	}
+}//*************/
+
+.creqit-control[data-fieldtype="Select"] .control-input,
+.creqit-control[data-fieldtype="Select"].form-group {
+	position: relative;
+
+	select {
+		/* for Firefox */
+		-moz-appearance: none;
+		/* for Chrome */
+		-webkit-appearance: none;
+		padding-left: 30px;//creqit.v1.sevval//
+	}
+
+	.select-icon {
+		padding-left: inherit;
+		padding-right: inherit;
+		position: absolute;
+		pointer-events: none;
+		top: 8px;//creqit.v1.sevval//
+		right: 12px;
+
+		&.xs {
+			top: 8px;//creqit.v1.sevval//
+			right: 10px;
+		}
+
+		.icon {
+			use {
+				stroke: var(--text-muted);
+			}
+		}
+	}
+	//creqit.v1.sevval//
+	.search-icon{
+		padding-left: inherit;
+		padding-right: inherit;
+		position: absolute;
+		pointer-events: none;
+		position: absolute;
+		left: 8px;
+		top: 8px;//creqit.v1.sevval//
+
+		&.xs {
+			top: 3px;
+			left: 10px;
+		}
+	}//****************/
+
+	.placeholder {
+		padding-left: inherit;
+		padding-right: inherit;
+		position: absolute;
+		pointer-events: none;
+		top: 8px;
+		//left: 12px;
+		left: 28px;//creqit.v1.sevval//
+		max-width: 80%;
+
+		&.xs {
+			//top: 3px;
+			top: 9px;//creqit.v1.sevval//
+		}
+	}
+}
+
+.no-border {
+	border: none !important;
+}
+
+.whitespace-nowrap {
+	white-space: nowrap;
+}
+
+.app-change-log-body {
+	h1 {
+		font-size: var(--text-2xl);
+	}
+}
+
+.new-version-log {
+	.new-version-links {
+		padding: var(--padding-xs) 0px;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 1em;
+	}
+}
+
+.centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+}
+
+.hide {
+	display: none !important;
+}
+
+.btn-link {
+	box-shadow: none !important;
+	outline: none;
+	.icon,
+	&:hover {
+		text-decoration: none !important;
+	}
+}
+
+.hidden {
+	@extend .d-none;
+}
+
+.margin {
+	margin: var(--margin-sm);
+}
+.margin-top {
+	margin-top: var(--margin-sm);
+}
+.margin-bottom {
+	margin-bottom: var(--margin-sm);
+}
+.margin-left {
+	margin-left: var(--margin-sm);
+}
+.margin-right {
+	margin-right: var(--margin-sm);
+}

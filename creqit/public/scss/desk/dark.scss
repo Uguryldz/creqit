@@ -1,0 +1,342 @@
+$check-icon-dark: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 4.00001L2.66667 5.80001L7 1.20001' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+[data-theme="dark"] {
+	/*#UPDATES --sevval*/
+	#logo-dark, #icon-dark {
+		display: block;
+	}
+	#logo-light, #icon-light {
+		display: none;
+	}
+	/**/
+	--neutral: var(--neutral-black);
+	--invert-neutral: var(--neutral-white);
+	// TODO: Update Pallete for dark mode.
+	--gray-700: #383838;
+	--gray-800: #232323;
+
+	// Type Colors
+	--text-neutral: var(--gray-50);
+	--text-dark: var(--creqit-dark-bg);
+	--text-muted: var(--gray-400);
+	--text-light: var(--gray-300);
+	--text-color: var(--gray-50);
+	--heading-color: var(--gray-50);
+
+	// SVG Colors
+	--icon-fill: transparent;
+	--icon-stroke: var(--gray-300);
+
+	// Error colors
+	--error-bg: var(--red-800);
+	--error-border: var(--red-400);
+
+	// Layout Colors
+	//--bg-color: var(--gray-900);
+	--bg-second-color: var(--creqit-dark-background);
+	--bg-color: var(--creqit-dark-bg);
+	--image-card-bg: var(--creqit-dark-background);
+	--sidebar-icon: var(--creqit-background-white);
+	--fg-color: var(--creqit-dark-bg);
+	--subtle-accent: var(--creqit-dark-bg);
+	--subtle-fg: var(--creqit-background-dark);
+	--fg-hover-color: var(--creqit-dark-background);
+	--card-bg: var(--creqit-dark-bg);
+	--widget-card-bg: var(--creqit-dark-background);
+	--disabled-text-color: var(--gray-400);
+	--disabled-control-bg: var(--creqit-dark-background);
+	--control-bg: var(--creqit-dark-background);
+	--control-bg-on-gray: var(--creqit-dark-background);
+	--awesomebar-focus-bg: var(--control-bg);
+	--awesomplete-hover-bg: var(--creqit-dark-background);
+	--modal-bg: var(--creqit-dark-bg);
+	--toast-bg: var(--modal-bg);
+	--popover-bg: var(--bg-color);
+	--creqit-sidebar-dark: var(--creqit-dark-hover);
+	--creqit-sidebar-light: var(--creqit-dark-bg);
+	--creqit-sidebar-hover: var(--creqit-dark-background);
+	--creqit-sidebar-header: #fff;
+	--creqit-sidebar-content: #A4ACB9;
+	--creqit-sidebar-logo-bg: var(--creqit-background-white);
+	--list-head-bg: var(--creqit-background-dark);
+	--creqit-active-border-bottom: #FFFFFF;
+
+	// Button Colors
+	//--btn-default-bg: var(--gray-800);
+	--btn-default-bg: linear-gradient(0deg, #171B26, #171B26),
+	linear-gradient(178.11deg, rgba(255, 255, 255, 0.032) 32.81%, rgba(255, 255, 255, 0) 113.13%);
+	--btn-default-boxshadow:0px 1px 2px 0px #1B1C1D7A, 0px 0px 0px 1px #242628;
+	
+	--btn-default-hover-bg: #2B3447;
+	--btn-default-hover-boxshadow: 0px 1px 2px 0px #1B1C1D7A, 0px 0px 0px 1px #242628;
+	--btn-default-color: var(--creqit-text-white);
+	--btn-default-hover-text: var(--creqit-text-white);
+	--btn-default-focus-color: var(--creqit-text-white);
+	--btn-default-focus-boxshadow: 0px 0px 0px 1px #171B26, 0px 1px 2px 0px #171B2680;
+	--btn-default-active-bg: var(--creqit-dark-checkbox);
+	--btn-primary: var(--creqit-lavender-blue-300);
+	--btn-primary-hover: var(--creqit-lavender-blue-400);
+	--btn-primary-hover-boxshadow: 0px 0px 0px 1px #171B26;
+	--btn-primary-boxshadow: 0px 1px 2px 0px #1B1C1D7A;
+	--btn-primary-focus: var(--creqit-lavender-blue-700);
+	--btn-primary-focus-boxshadow: 0px 0px 0px 1px #171B26, 0px 1px 2px 0px #171B2680;
+	--btn-primary-active: 0px 0px 0px 1px #335CFF,0px 0px 0px 2px #FFFFFF99,0px 0px 0px 3px #335CFF80, 0px 1px 2px 0px #335CFF80;
+	--btn-disabled: var(--creqit-dark-disabled);
+	--btn-primary-border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+	//nav-bottom
+	--nav-bottom-background: var(--custom-orange-500);
+	--navbar-bg: var(--creqit-navbar-color);
+
+	// Border Colors
+	--border-primary: var(--gray-200);
+
+	// Background Text Color Pairs
+	--bg-blue: var(--blue-600);
+	--bg-light-blue: var(--blue-600);
+	--bg-dark-blue: var(--blue-900);
+	--bg-green: var(--green-900);
+	--bg-yellow: var(--yellow-700);
+	--bg-orange: var(--orange-700);
+	--bg-red: var(--red-600);
+	--bg-gray: var(--gray-600);
+	--bg-grey: var(--gray-600);
+	--bg-darkgrey: var(--gray-600);
+	--bg-dark-gray: var(--gray-500);
+	--bg-light-gray: var(--creqit-dark-background);
+	--bg-purple: var(--purple-700);
+	--bg-pink: var(--pink-700);
+	--bg-cyan: var(--cyan-800);
+
+	--text-on-blue: var(--blue-50);
+	--text-on-light-blue: var(--blue-50);
+	--text-on-dark-blue: var(--blue-300);
+	--text-on-green: var(--green-100);
+	--text-on-yellow: var(--yellow-50);
+	--text-on-orange: var(--orange-100);
+	--text-on-red: var(--red-50);
+	--text-on-gray: var(--gray-50);
+	--text-on-grey: var(--gray-50);
+	--text-on-darkgrey: var(--gray-200);
+	--text-on-dark-gray: var(--gray-200);
+	--text-on-light-gray: var(--gray-100);
+	--text-on-purple: var(--purple-100);
+	--text-on-pink: var(--pink-100);
+	--text-on-cyan: var(--cyan-100);
+	--dropdown-text: var(--text-muted);
+	--creqit-dropdown-active-bg: var(--creqit-dropdown-active);
+
+	// alert colors
+	--alert-text-danger: var(--red-300);
+	--alert-text-warning: var(--yellow-300);
+	--alert-text-info: var(--blue-300);
+	--alert-text-success: var(--green-300);
+
+	--alert-bg-danger: var(--creqit-dark-mode-grey);
+	--alert-bg-danger-boxshadow: var(--creqit-dark-mode-white-boxshadow);
+	--alert-bg-warning: var(--creqit-dark-mode-grey);
+	--alert-bg-warning-boxshadow: var(--creqit-dark-mode-white-boxshadow);
+	--alert-bg-info: var(--creqit-dark-mode-white);
+	--alert-bg-info-boxshadow: var(--creqit-dark-mode-grey-boxshadow);
+	--alert-bg-success: var(--creqit-dark-mode-white);
+	--alert-bg-success-boxshadow: var(--creqit-dark-mode-grey-boxshadow);
+	--creqit-text-color: var(--creqit-text-white);
+	--grid-head-text: var(--creqit-icon-subdued-400);
+
+	--sidebar-select-color: var(--gray-800);
+
+	--scrollbar-thumb-color: var(--gray-600);
+	--scrollbar-track-color: var(--gray-700);
+
+	--timeline-badge-color: var(--gray-500);
+	--timeline-badge-bg: var(--creqit-dark-bg);
+
+	--shadow-inset: var(--fg-color);
+	--border-color: var(--creqit-dark-border);
+	--border-creqit-color: var(--creqit-dark-border);
+	--search-border: var(--stroke-soft-dark);
+	--dark-border-color: var(--gray-600);
+	--table-border-color: var(--border-color);
+	--highlight-color: var(--creqit-dark-background);
+	--yellow-highlight-color: var(--yellow-700);
+
+	--btn-group-border-color: var(--gray-700);
+
+	--placeholder-color: var(--gray-700);
+
+	--highlight-shadow: 1px 1px 10px var(--blue-900), 0px 0px 4px var(--blue-500);
+
+	--shadow-base: 0px 4px 8px rgba(114, 176, 233, 0.06), 0px 0px 4px rgba(112, 172, 228, 0.12);
+
+	// "diff" colors
+	--diff-added: var(--green-800);
+	--diff-removed: var(--red-800);
+
+	// sidebar toggle
+	.page-title .sidebar-toggle-btn {
+		--icon-stroke: var(--gray-300);
+	}
+
+	// input
+	--input-disabled-bg: none;
+	--input-bg: var(--creqit-background-dark);
+	--input-solid: var(--creqit-dark-solid);
+	--input-boxshadow: 0px 0px 0px 1px #3838380A;
+	--input-boxshadow-hover: 0px 0px 0px 1px #373A4133, 1px 1px 2px 0px #666D803D;
+	--input-boxshadow-focus: 0px 0px 0px 3px #335CFF52, 0px 0px 0px 2px #335CFF, 0px 1px 1px 0px #335CFF66;
+	--input-placeholder: var(--creqit-neutral-solid-300);
+	--input-disabled: var(--creqit-dark-disabled);
+	--input-label: var(--creqit-input-label);
+	--input-hint: var(--creqit-input-label);
+	--input-boxshadow-focus-error: 0px 0px 0px 1px #DF1C41, 0px 0px 0px 3px rgba(223, 28, 65, 0.2392156863), 0px 1px 2px 0px rgba(150, 19, 44, 0.3215686275);
+
+	// checkbox
+	--checkbox-color: var(--neutral-white);
+	--checkbox-gradient: linear-gradient(
+		180deg,
+		var(--neutral-white) -124.51%,
+		var(--neutral-white) 100%
+	);
+	--checkbox-disabled-gradient: linear-gradient(
+		180deg,
+		var(--gray-600) -124.51%,
+		var(--gray-600) 100%
+	);
+	--input-focus: 0px 0px 0px 2px #FFFFFF,0px 0px 0px 3px #171B2680, 0px 0px 0px 1px #171B26, 0px 1px 2px 0px #171B2680;
+	--checkbox-focus-shadow: var(--focus-default);
+	--checkbox-radio-bg: var(--creqit-dark-checkbox);
+	--checkbox-radio-boxshadow: 0px 0px 0px 1px #DFE1E7, 0px 1px 2px 0px #A4ACB966;
+	--checkbox-checked-boxshadow: 0px 0px 0px 1px #717171;
+	--checkbox-checked-focus: 0px 0px 0px 3px #C8C8C880, 0px 0px 0px 1px #C8C8C8, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px 0px #C8C8C880;
+	--checkbox-checked-disabled: var(--creqit-dark-checkbox-disabled);
+	--radio-hover: 0px 0px 0px 1px #C1C7D0, 0px 1px 2px 0px #666D8066;
+	--radio-focus: 0px 0px 0px 2px #FFFFFF,0px 0px 0px 3px #171B2680, 0px 0px 0px 1px #171B26, 0px 1px 2px 0px #171B2680;
+	--radio-checked: var(--creqit-neutral-solid-300);
+	--radio-checked-boxshadow: 0px 0px 0px 1px #171B2680, 0px 0px 0px 2px #FFFFFF, 0px 0px 0px 1px #171B26, 0px 1px 2px 0px #171B2680;
+	--checkbox-checked-disabled-border: var(--creqit-border-hover-100);
+
+	input[type="checkbox"] {
+		&:checked {
+			//background-image: $check-icon-dark, var(--checkbox-gradient);
+			background-image: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 4.00001L2.66667 5.80001L7 1.20001' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>");//creqit.v1.sevval//
+			background-color: var(--creqit-dark-checkbox);
+			box-shadow:  0px 0px 0px 2px #FFFFFF,0px 0px 0px 1px #C8C8C8,0px 0px 0px 3px #C8C8C880, 0px 1px 2px 0px #C8C8C880;			
+		}
+		&.disabled-selected,
+		&:disabled:checked {
+			//background-image: $check-icon-dark, var(--checkbox-disabled-gradient);
+			background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 4.2L4.36364 7L10.5 1' stroke='%23C1C7D0' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");//creqit.v1.sevval//
+			background-color: var(--creqit-dark-checkbox-disabled);
+		}
+		&.disabled-deselected {
+			border: none;
+			background-color: var(--gray-700);
+		}
+	}
+
+	// switch
+	--switch-bg: var(--gray-500);
+
+	// date-picker
+	--date-active-text: var(--gray-100);
+	--date-active-bg: var(--gray-700);
+	--date-range-bg: var(--subtle-fg);
+
+	// grid
+	.grid-body .editable-row {
+		--control-bg: var(--creqit-dark-bg);
+		--input-disabled-bg: var(--gray-800);
+	}
+	color-scheme: dark;
+
+	.creqit-card {
+		.btn-default {
+			background-color: var(--control-bg);
+
+			&:hover {
+				background-color: var(--fg-hover-color);
+			}
+		}
+	}
+
+	.modal,
+	.form-in-grid {
+		--control-bg: var(--gray-800);
+		--border-color: var(--gray-800);
+	}
+
+	.print-format {
+		--text-color: var(--creqit-dark-bg);
+		--border-color: var(--gray-100);
+	}
+
+	.ql-editor {
+		color: var(--text-on-gray);
+		&.read-mode {
+			span:not(.mention),
+			p,
+			u,
+			strong {
+				background-color: inherit !important;
+				color: inherit !important;
+			}
+		}
+	}
+	.comment-input-wrapper .ql-editor.ql-blank::before {
+		color: var(--text-color);
+	}
+	// --appreciation-color: var(--dark-green-100);
+	// --appreciation-bg: var(--dark-green-600);
+	// --criticism-color: var(--red-100);
+	// --criticism-bg: var(--red-600);
+
+	// creqit Charts Colors
+	.chart-container {
+		--charts-label-color: var(--gray-300);
+		--charts-axis-line-color: var(--subtle-fg);
+
+		--charts-stroke-width: 5px;
+		--charts-dataset-circle-stroke: #ffffff;
+		--charts-dataset-circle-stroke-width: var(--charts-stroke-width);
+
+		--charts-tooltip-title: var(--charts-label-color);
+		--charts-tooltip-label: var(--charts-label-color);
+		--charts-tooltip-value: white;
+		--charts-tooltip-bg: var(--creqit-dark-bg);
+
+		--charts-legend-label: var(--charts-label-color);
+	}
+
+	// find better fix
+	.heatmap-chart {
+		g > rect[fill="#ebedf0"] {
+			fill: var(--gray-700);
+		}
+	}
+
+	.rating {
+		// rating
+		--star-fill: var(--gray-500);
+		.star-hover {
+			--star-fill: var(--gray-400);
+		}
+	}
+
+	// skeleton
+	--skeleton-bg: var(--gray-800);
+
+	--right-arrow-svg: url("data: image/svg+xml;utf8, <svg width='6' height='8' viewBox='0 0 6 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1.25 7.5L4.75 4L1.25 0.5' stroke='white' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+
+	--left-arrow-svg: url("data: image/svg+xml;utf8, <svg width='6' height='8' viewBox='0 0 6 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M7.5 9.5L4 6l3.5-3.5' stroke='white' stroke-linecap='round' stroke-linejoin='round'></path></svg>");
+
+	::selection {
+		color: var(--text-color);
+		background: var(--gray-500);
+	}
+
+	$indicator-colors: green, cyan, blue, orange, yellow, gray, grey, red, pink, darkgrey, purple,
+		light-blue;
+	@each $color in $indicator-colors {
+		.indicator {
+			--indicator-dot-#{"" + $color}: var(--bg-#{$color});
+		}
+	}
+}

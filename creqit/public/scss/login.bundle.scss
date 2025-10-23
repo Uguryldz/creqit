@@ -1,0 +1,440 @@
+@import "./desk/variables";
+
+body {
+	@include media-breakpoint-up(sm) {
+		background-color: var(--bg-light-gray);
+	}
+
+	.page-content-wrapper {
+		min-height: calc(100vh - 220px);
+	}
+	.web-footer {
+		display: none;
+	}
+}
+body[data-path="login"] {
+	// @include media-breakpoint-up(sm) {
+	//   background-image: url("/assets/creqit/images/pattern.svg");/*#UPDATES --sevval*/
+	//   background-size: cover; /* Resmi sayfa boyutuna göre ayarlar */
+	//   background-position: center; /* Resmi ortalar */
+	//   background-repeat: no-repeat;
+	// }
+	background-color: var(--creqit-background-disabled-0);
+	box-shadow: 2px 4px 20px 12px #0C183D08;
+}
+
+body[data-path=login] { 
+	.login-area{
+		width: 98.7% !important;
+	}//creqit.v1.sevval//
+	section{
+		background-color: var(--creqit-background-disabled-0);
+	}//creqit.v1.sevval//
+	nav {
+    	display: none !important;
+	}
+	.container {
+		width: 100% !important;//creqit.v1.sevval//
+		max-width: 100% !important;//creqit.v1.sevval//
+		// padding-left: 15px;
+		// padding-right: 15px;
+		padding: 0 !important;
+		// margin: 0 !important;
+	}
+	.for-login > .for-login-form,
+	.for-email-login > .for-login-form,
+	.for-signup > .for-login-form,
+	.for-forgot > .for-login-form,
+	.for-login-with-email-link > .for-login-form{
+		position: relative;
+		top: 15%;
+		width: 360px;
+		//height: 504px;//creqit.v1.sevval//
+		margin: 0 auto;
+		.creqit-logo{
+			width: 52px;
+			height: 52px;
+			border-radius: 6px;
+			padding: 8px 6px;
+			box-shadow: 0px 0px 1px 0px #335CFF14, 0px 1px 2px 0px #A4ACB966;
+		}
+	}
+	section > .login-right{
+		margin-left: 48px;
+		margin-top: 20px;
+		p{
+			margin: 20px 55px 20px 0;
+		}//creqit.v1.sevval//
+		.login-dashboard{
+			max-height: 70vh;//creqit.v1.sevval//
+			position: relative;
+			background-color: #1F3BAD0F;
+			padding: 15px 0 15px 15px;
+			border-radius: 20px 0 0 20px;
+			.frame{
+				position: absolute;
+				bottom: -30px;
+				left: 4px;
+			}
+		}
+		.login-right-footer{
+			@include creqit-text("label", "s", "medium");
+			color: var(--creqit-text-subdued-400);
+			position: absolute;
+			bottom: 0;
+			margin-bottom: 0px;
+		}//creqit.v1.sevval//
+
+	}
+}
+
+// body[data-path=login] .navbar-light {
+//     border-bottom: 1px solid transparent;
+//     background: transparent;
+// }
+// body[data-path=login] .navbar .container{
+// 	.navbar-toggler{
+// 		display: none;
+// 	}
+// 	.navbar-brand {
+// 		/*#UPDATES --sevval*/
+// 		// background-image: url(/assets/creqit/images/creqit_logo.png);
+// 		// background-size: cover;
+// 		// background-position: center;
+// 		// background-repeat: no-repeat;
+// 		// width: 32px;
+// 		// height: 50px;
+// 		// border-bottom: none;
+// 		// background-color: transparent;
+// 		/**/
+// 		margin-top: 15px;
+// 		span {
+// 			display: none;
+// 		}
+// 	}
+// }
+
+@media (max-width: 768px) {
+    body[data-path=login] #page-login .page_content .for-login,
+	body[data-path=login] #page-login .page_content .for-signup,
+	body[data-path=login] #page-login .page_content .for-login-with-email-link,
+	body[data-path=login] #page-login .page_content .for-forgot{ 
+        margin-left: 0 !important;
+    }
+	
+}
+
+body[data-path=login] #page-login .page_content .for-login,
+body[data-path=login] #page-login .page_content .for-signup,
+body[data-path=login] #page-login .page_content .for-login-with-email-link,
+body[data-path=login] #page-login .page_content .for-forgot{
+	//position: relative;
+    //top: 80px;
+	//height: 95vh;//creqit.v1.sevval//
+    background-color: #fff;
+    //max-width: 400px;
+    //margin: 0 auto;
+	margin: 20px 0 20px 33px;
+	padding: 32px !important;
+    border-radius: var(--border-radius-xl);
+    border: 1px solid var(--border-color);
+	.page-card-head{
+		padding: 0 !important;
+		//text-align: justify;
+		//text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		h2{
+			@include creqit-display("4xl");
+			color: var(--creqit-text-loud-900);
+			margin: 16px 0;
+		}
+		p{
+			@include creqit-text(body, "l", "regular");
+			color: var(--creqit-text-normal-500);
+		}
+	}
+	.page-card{
+		padding: 0 !important;
+		border: none !important;
+		form{
+			max-width: none;
+			margin: 0;
+		}
+		.page-card-body {
+			.sr-only{
+				position: relative;
+				width: auto;
+				height: auto;	
+				//color: #0A0D14;
+				color: var(--creqit-text-muted-600);
+				@include creqit-text(label, "s", "medium");
+			}
+		}
+	}
+	.page-card-body{
+		.email-field svg,
+		.password-field svg{
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			z-index: 1;
+		}
+		.email-field input,
+		.password-field input{
+			height: 48px;
+			&::placeholder{
+				line-height: 24px;
+				@include creqit-text(label, "m", "medium");
+				color: var(--creqit-text-subdued-400);
+			}
+		}
+		.password-field span{
+			//top: 11px;
+			top: 5px;
+    		right: 43px;
+		}
+	}
+	.page-card-actions {
+		button {
+		  height: 48px;/*#UPDATES --sevval*/
+		  background-color: var(--creqit-lavender-blue-800);/*#UPDATES --sevval*/
+		  border: 1px solid;
+		  border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+		  box-shadow: 0px 1px 2px 0px #0C183D80, 0px 0px 0px 1px #335CFF;
+		  &.sign-up-message{
+			background: linear-gradient(0deg, #FFFFFF, #FFFFFF),
+				linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(193, 199, 208, 0.02) 100%);
+			box-shadow: 0px 0px 0px 1px #0C183D14, 0px 1px 2px 0px #A4ACB93D;
+			a:hover{
+				text-decoration: none;
+			}
+		  }
+		  &:hover {
+			//background-color: #1A198A !important;/*#UPDATES --sevval*/
+			border: 1px solid;
+			border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+			box-shadow: 0px 0px 0px 1px #335CFF, 0px 1px 2px 0px #0C183D80;
+		  }//creqit.v1.sevval//
+		}
+	  }
+	  
+	.social-logins .login-with-email-link .btn-login-with-email-link{
+		color: var(--creqit-text-subdued-400) !important;
+		@include creqit-text(label, "s", "medium");
+		background: none !important;
+		justify-content: flex-end;
+		//text-decoration: underline;
+	}
+}
+
+.for-forgot,
+.for-login-with-email-link,
+.for-signup,
+.for-email-login {
+	display: none;
+}
+
+.for-login,
+.for-forgot,
+.for-login-with-email-link,
+.for-signup,
+.for-email-login {
+	.page-card {
+		padding: 45px 10px;
+		background-color: #fff;
+		max-width: 400px;
+		margin: 0 auto;
+		border-radius: var(--border-radius-md);
+		border: 1px solid var(--border-color);
+
+		form {
+			max-width: 320px;
+			margin: 0 auto;
+
+			.form-group {
+				margin-bottom: var(--margin-sm);
+			}
+		}
+
+		.page-card-actions {
+			margin-top: var(--margin-lg);
+		}
+
+		.page-card-body {
+			::placeholder, /* Chrome, Firefox, Opera, Safari 10.1+ */
+			::-ms-input-placeholder {
+				/* Microsoft Edge */
+				color: var(--text-light);
+				opacity: 1; /* Firefox */
+			}
+
+			input[type="text"],
+			input[type="email"],
+			input[type="password"] {
+				border: none;
+				color: var(--text-color);
+				@include get_textstyle("base", "regular");
+				background-color: var(--control-bg);
+				margin-bottom: 1rem;
+			}
+
+			&.invalid {
+				input[type="text"],
+				input[type="email"],
+				input[type="password"] {
+					border: 1px solid var(--red-500);
+				}
+			}
+
+			.form-label {
+				@include get_textstyle("base", "regular");
+			}
+
+			.forgot-password-message {
+				text-align: right;
+				line-height: 1;
+
+				> * {
+					//color: var(--text-light);
+					//@include get_textstyle("sm", "regular");
+					@include creqit-text(body, "s", "regular");
+					color: var(--creqit-text-subdued-400);
+				}
+			}
+
+			.field-icon {
+				left: 9px;
+				top: 5px;
+				position: absolute;
+				z-index: 2;
+			}
+
+			.email-field,
+			.password-field {
+				position: relative;
+
+				input {
+					//padding-left: 35px;
+					padding: 12px 10px;
+				}
+
+				.toggle-password {
+					right: 9px;
+					top: 5px;
+					position: absolute;
+					z-index: 2;
+					cursor: pointer;
+					font-size: 12px;
+				}
+			}
+
+			.btn-login-option {
+				@include get_textstyle("base", "medium");
+				color: var(--text-gray-700);
+				background: var(--gray-100);
+				box-shadow: none;
+				border: none;
+				display: flex;
+				place-content: center;
+
+				&.btn-salesforce {
+					i {
+						color: var(--blue-400);
+					}
+				}
+
+				img {
+					margin-right: var(--padding-xs);
+				}
+
+				&:hover {
+					border: none;
+					background: var(--gray-300);
+				}
+			}
+
+			.social-logins {
+				margin-top: var(--margin-md);
+				@include get_textstyle("base", "regular");
+
+				.social-login-buttons {
+					margin-top: var(--margin-md);
+
+					.login-button-wrapper {
+						@include media-breakpoint-up(md) {
+							min-width: 33.33%;
+						}
+						min-width: 50%;
+						padding: 0 4px;
+						margin-bottom: var(--margin-md);
+
+						&:last-child {
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+
+			.login-divider {
+				margin: var(--margin-md) 0;
+			}
+		}
+	}
+
+	.sign-up-message {
+		//margin-top: 1rem;
+		margin-bottom: 0;
+		color: var(--text-light);
+		@include get_textstyle("base", "regular");
+		a {
+			color: var(--primary);
+		}
+	}
+
+	.invalid-login {
+		-webkit-animation: wiggle 0.5s linear;
+	}
+
+	@-webkit-keyframes wiggle {
+		8%,
+		41% {
+			-webkit-transform: translateX(-10px);
+		}
+		25%,
+		58% {
+			-webkit-transform: translateX(10px);
+		}
+		75% {
+			-webkit-transform: translateX(-5px);
+		}
+		92% {
+			-webkit-transform: translateX(5px);
+		}
+		0%,
+		100% {
+			-webkit-transform: translateX(0);
+		}
+	}
+}
+
+.page-card-head {
+	padding: max(5vh, 30px) 0 14px 0px;
+	margin: 0 auto;
+	text-align: center;
+	font-size: var(--text-xl);
+	font-weight: 600;
+
+	img {
+		max-height: 42px;
+	}
+
+	h4 {
+		margin-top: 1rem;
+		font-size: var(--text-xl);
+		font-weight: var(--weight-semibold);
+		letter-spacing: 0.01em;
+		color: var(--text-color);
+	}
+}

@@ -1,0 +1,13 @@
+**/hooks.py,creqit.gettext.extractors.navbar.extract
+**/doctype/*/*.json,creqit.gettext.extractors.doctype.extract
+**/workspace/*/*.json,creqit.gettext.extractors.workspace.extract
+**/onboarding_step/*/*.json,creqit.gettext.extractors.onboarding_step.extract
+**/module_onboarding/*/*.json,creqit.gettext.extractors.module_onboarding.extract
+**/report/*/*.json,creqit.gettext.extractors.report.extract
+**.py,creqit.gettext.extractors.python.extract
+**/templates/**.js,creqit.gettext.extractors.html_template.extract
+**.js,creqit.gettext.extractors.javascript.extract
+**.html,creqit.gettext.extractors.html_template.extract
+**.vue,creqit.gettext.extractors.html_template.extract
+**/custom/*.json,creqit.gettext.extractors.customization.extract
+**/fixtures/custom_field.json,creqit.gettext.extractors.custom_field.extract

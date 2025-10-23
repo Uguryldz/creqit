@@ -1,0 +1,77 @@
+.table {
+	margin-bottom: 0px;
+	margin-top: 0px;
+	border-radius: var(--border-radius-md);
+    overflow: hidden;/****creqit.v1sevval*/
+}
+
+thead {
+	border: none;
+	background-color: var(--creqit-neutral-solid-25);/****creqit.v1sevval*/
+	border-radius: var(--border-radius-md);
+}
+
+thead > tr {
+	border-radius: var(--border-radius-md);
+}
+
+thead > tr > th:first-child {
+	/*border-radius: var(--border-radius-md) 0 0 var(--border-radius-md);*/
+	border-radius: var(--border-radius-md) 0 0 0;/****creqit.v1sevval*/
+}
+thead > tr > th:last-child {
+	/*border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;*/
+	border-radius: 0 var(--border-radius-md) 0 0;/****creqit.v1sevval*/
+}
+
+/* Space between thead and tbody */
+/* tbody:before {
+	content: "@";
+	display: block;
+	line-height: var(--margin-md);
+	text-indent: -99999px;
+} */
+
+td[data-fieldname="permissions"] > .row > .col-md-4 {
+	margin-bottom: var(--margin-sm);
+}
+
+tbody > tr {
+	border-top: 1px solid var(--border-color);
+	border-right: 1px solid var(--border-color);/****creqit.v1sevval*/
+	border-left: 1px solid var(--border-color);/****creqit.v1sevval*/
+}
+
+tbody > tr:first-child {
+	border-top: none;
+}
+tbody > tr:last-child {
+	border-bottom: 1px solid var(--border-color);/****creqit.v1sevval*/
+}
+
+button.btn-remove-perm {
+	box-shadow: none;
+	padding: var(--padding-xs) var(--padding-xs);
+}
+
+button.btn-remove-perm > svg > use {
+	/*stroke: var(--white);*/
+	stroke: var(--creqit-secondary-red-100);
+}
+/****creqit.v1sevval*/
+[data-route^="permission-manager/"] table th{
+	padding: 10px 12px;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+}
+.permission-help{
+	border: 1px solid var(--border-color);
+	border-radius: 10px;
+}
+.permission-help hr{
+	width: 400px;
+	margin: 20px 0 !important;
+	position: relative;
+    left: 60%;
+}/****creqit.v1sevval*/

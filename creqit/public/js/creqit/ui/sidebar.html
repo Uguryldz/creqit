@@ -1,0 +1,96 @@
+<div class="body-sidebar-container">
+	<!-- <div class="body-sidebar-placeholder"></div>  -->
+	<button class="sidebar-toggle-button"></button>
+		<div class="body-sidebar">
+			<div class="body-sidebar-top">
+				<!-- <a class="app-switcher-dropdown" 
+						style="text-decoration: none; width: 100%; position: relative;"> -->
+					<div class="standard-sidebar-item align-items-center logo">
+						<div class="d-flex align-items-center">
+							<div class="sidebar-item-icon">	
+								<img class="logo-icon"
+									src="/assets/creqit/images/creqit_mini_logo.svg" id="icon-light" width="100%">
+								<img class="logo-icon"
+									src="/assets/creqit/images/creqit_mini_gray_logo.svg" id="icon-dark" width="100%">
+							</div> 
+							
+							<div class="sidebar-item-logo">
+								
+								<img class="app-logo"
+									src="/assets/creqit/images/creqit_logo.png" alt="{%= ("App Logo") %}" style="width:149px" id="logo-light"> <!--#UPDATES --sevval-->
+								<img src="/assets/creqit/images/creqit_gray.png" alt="Dark Logo" style="width: 149px;" id="logo-dark"> <!--#UPDATES --sevval-->
+							</div> <!--#UPDATES --sevval --> 
+						</div>
+						<!-- <div class="sidebar-item-control">
+							<button class="btn-reset drop-icon show-in-edit-mode">
+								<svg class="es-icon es-line  icon-sm" style="" aria-hidden="true">
+									<use class="" href="#es-line-down"></use>
+								</svg>
+							</button>
+						</div> -->
+					</div>
+				<!-- </a>-->
+				
+				<!-- <div class="app-switcher-menu hidden" role="menu">
+				</div> -->
+				<div class="sidebar-items">
+					<div class="sidebar-search">
+						<form class="form-inline fill-width justify-content-end" role="search" onsubmit="return false;">
+							<div class="input-group search-bar text-muted">
+								<input
+									id="sidebar-search"
+									type="text"
+									class="form-control"
+									placeholder="{%= __('Search ({0})', [creqit.utils.is_mac() ? '⌘ + K' : 'Ctrl + K']) %}"
+									aria-haspopup="true"
+								>
+								<span class="search-icon">
+									<svg class="icon icon-sm"><use href="#icon-search"></use></svg>
+								</span>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<div class="body-sidebar-bottom d-flex align-items-center">
+				<div class="sidebar-user d-flex">
+				</div>
+					<button
+					class="btn-reset nav-link"
+					data-toggle="dropdown"
+					aria-label="{{ __('User Menu') }}"
+					>
+						<svg class="es-icon es-line  icon-sm" style="" aria-hidden="true">
+							<use class="" href="#es-creqit-line-down"></use>
+						</svg>
+					</button>
+					<div class="dropdown-menu dropdown-menu-right" id="toolbar-user" role="menu">
+						{% for item in navbar_settings.settings_dropdown %}
+							{% if (!item.hidden) { %}
+								{% if (item.route) { %}
+									<a class="dropdown-item" href="{{ item.route }}">
+										{%= __(item.item_label) %}
+									</a>
+								{% } else if (item.action) { %}
+									<button class="btn-reset dropdown-item btn-action" onclick="return {{ item.action }}">
+										{%= __(item.item_label) %}
+									</button>
+								{% } else { %}
+									<div class="dropdown-divider"></div>
+								{% } %}
+							{% } %}
+						{% endfor %}
+					</div>
+				
+				<a class="edit-sidebar-link text-extra-muted hidden d-none">
+					<svg class="icon icon-sm" style="margin-top: -2px;">
+						<use href="#icon-setting-gear"></use></svg> Settings</a>
+				<a class="close-sidebar-link text-extra-muted hidden d-none">
+					<svg class="icon icon-sm" style="margin-top: -2px;">
+						<use href="#icon-close"></use></svg> Close</a>
+			</div>
+		</div>
+
+	</div>
+</div>
