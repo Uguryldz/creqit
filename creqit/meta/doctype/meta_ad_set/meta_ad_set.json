@@ -1,0 +1,157 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-04-23 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "ad_set_details_section",
+  "column_break_5",
+  "ad_set_id",
+  "ad_set_name",
+  "ad_set_status",
+  "campaign",
+  "section_break_10",
+  "targeting_section",
+  "column_break_12",
+  "targeting_age_min",
+  "targeting_age_max",
+  "targeting_genders",
+  "targeting_countries",
+  "section_break_15",
+  "meta_details_section",
+  "column_break_17",
+  "meta_ad_set_id",
+  "meta_campaign_id",
+  "meta_account_id",
+  "section_break_20"
+ ],
+ "fields": [
+  {
+   "fieldname": "ad_set_details_section",
+   "fieldtype": "Section Break",
+   "label": "Ad Set Details"
+  },
+  {
+   "fieldname": "ad_set_id",
+   "fieldtype": "Data",
+   "label": "Ad Set ID",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ad_set_name",
+   "fieldtype": "Data",
+   "label": "Ad Set Name"
+  },
+  {
+   "fieldname": "ad_set_status",
+   "fieldtype": "Select",
+   "label": "Ad Set Status",
+   "options": "Active\nPaused\nArchived"
+  },
+  {
+   "fieldname": "campaign",
+   "fieldtype": "Link",
+   "label": "Campaign",
+   "options": "Meta Campaign"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "targeting_section",
+   "fieldtype": "Section Break",
+   "label": "Targeting"
+  },
+  {
+   "default": "18",
+   "fieldname": "targeting_age_min",
+   "fieldtype": "Int",
+   "label": "Minimum Age"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "65",
+   "fieldname": "targeting_age_max",
+   "fieldtype": "Int",
+   "label": "Maximum Age"
+  },
+  {
+   "fieldname": "targeting_genders",
+   "fieldtype": "Select",
+   "label": "Genders",
+   "options": "All\nMale\nFemale"
+  },
+  {
+   "fieldname": "targeting_countries",
+   "fieldtype": "Table",
+   "label": "Countries",
+   "options": "Meta Country"
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "meta_details_section",
+   "fieldtype": "Section Break",
+   "label": "Meta Details"
+  },
+  {
+   "fieldname": "meta_ad_set_id",
+   "fieldtype": "Data",
+   "label": "Meta Ad Set ID"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "meta_campaign_id",
+   "fieldtype": "Data",
+   "label": "Meta Campaign ID"
+  },
+  {
+   "fieldname": "meta_account_id",
+   "fieldtype": "Data",
+   "label": "Meta Account ID"
+  },
+  {
+   "fieldname": "section_break_20",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 0,
+ "links": [],
+ "modified": "2024-04-23 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Meta",
+ "name": "Meta Ad Set",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+} 

@@ -1,0 +1,107 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-04-23 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "campaign_details_section",
+  "column_break_5",
+  "campaign_id",
+  "campaign_name",
+  "campaign_status",
+  "campaign_objective",
+  "section_break_10",
+  "meta_details_section",
+  "column_break_12",
+  "meta_campaign_id",
+  "meta_account_id",
+  "section_break_15"
+ ],
+ "fields": [
+  {
+   "fieldname": "campaign_details_section",
+   "fieldtype": "Section Break",
+   "label": "Campaign Details"
+  },
+  {
+   "fieldname": "campaign_id",
+   "fieldtype": "Data",
+   "label": "Campaign ID",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "campaign_name",
+   "fieldtype": "Data",
+   "label": "Campaign Name"
+  },
+  {
+   "fieldname": "campaign_status",
+   "fieldtype": "Select",
+   "label": "Campaign Status",
+   "options": "Active\nPaused\nArchived"
+  },
+  {
+   "fieldname": "campaign_objective",
+   "fieldtype": "Select",
+   "label": "Campaign Objective",
+   "options": "CONVERSIONS\nLINK_CLICKS\nPOST_ENGAGEMENT\nREACH\nVIDEO_VIEWS"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "meta_details_section",
+   "fieldtype": "Section Break",
+   "label": "Meta Details"
+  },
+  {
+   "fieldname": "meta_campaign_id",
+   "fieldtype": "Data",
+   "label": "Meta Campaign ID"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "meta_account_id",
+   "fieldtype": "Data",
+   "label": "Meta Account ID"
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 0,
+ "links": [],
+ "modified": "2024-04-23 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Meta",
+ "name": "Meta Campaign",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+} 

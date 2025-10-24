@@ -1,0 +1,168 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-04-23 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "ad_details_section",
+  "column_break_5",
+  "ad_id",
+  "ad_name",
+  "ad_status",
+  "ad_set",
+  "section_break_10",
+  "creative_section",
+  "column_break_12",
+  "creative_type",
+  "creative_title",
+  "creative_body",
+  "creative_image_url",
+  "creative_video_url",
+  "section_break_15",
+  "meta_details_section",
+  "column_break_17",
+  "meta_ad_id",
+  "meta_ad_set_id",
+  "meta_campaign_id",
+  "meta_account_id",
+  "section_break_20"
+ ],
+ "fields": [
+  {
+   "fieldname": "ad_details_section",
+   "fieldtype": "Section Break",
+   "label": "Ad Details"
+  },
+  {
+   "fieldname": "ad_id",
+   "fieldtype": "Data",
+   "label": "Ad ID",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ad_name",
+   "fieldtype": "Data",
+   "label": "Ad Name"
+  },
+  {
+   "fieldname": "ad_status",
+   "fieldtype": "Select",
+   "label": "Ad Status",
+   "options": "Active\nPaused\nArchived"
+  },
+  {
+   "fieldname": "ad_set",
+   "fieldtype": "Link",
+   "label": "Ad Set",
+   "options": "Meta Ad Set"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "creative_section",
+   "fieldtype": "Section Break",
+   "label": "Creative"
+  },
+  {
+   "fieldname": "creative_type",
+   "fieldtype": "Select",
+   "label": "Creative Type",
+   "options": "Image\nVideo"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "creative_title",
+   "fieldtype": "Data",
+   "label": "Creative Title"
+  },
+  {
+   "fieldname": "creative_body",
+   "fieldtype": "Text Editor",
+   "label": "Creative Body"
+  },
+  {
+   "fieldname": "creative_image_url",
+   "fieldtype": "Data",
+   "label": "Creative Image URL",
+   "depends_on": "eval:doc.creative_type=='Image'"
+  },
+  {
+   "fieldname": "creative_video_url",
+   "fieldtype": "Data",
+   "label": "Creative Video URL",
+   "depends_on": "eval:doc.creative_type=='Video'"
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "meta_details_section",
+   "fieldtype": "Section Break",
+   "label": "Meta Details"
+  },
+  {
+   "fieldname": "meta_ad_id",
+   "fieldtype": "Data",
+   "label": "Meta Ad ID"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "meta_ad_set_id",
+   "fieldtype": "Data",
+   "label": "Meta Ad Set ID"
+  },
+  {
+   "fieldname": "meta_campaign_id",
+   "fieldtype": "Data",
+   "label": "Meta Campaign ID"
+  },
+  {
+   "fieldname": "meta_account_id",
+   "fieldtype": "Data",
+   "label": "Meta Account ID"
+  },
+  {
+   "fieldname": "section_break_20",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 0,
+ "links": [],
+ "modified": "2024-04-23 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Meta",
+ "name": "Meta Ad",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+} 
