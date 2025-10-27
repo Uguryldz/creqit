@@ -6,8 +6,8 @@ from creqit import _
 from creqit.model.document import Document
 
 
-class FacebookLead(Document):
-	"""Facebook Lead from Facebook Lead Ads"""
+class FacebookLeadAds(Document):
+	"""Facebook Lead Ads from Facebook Lead Ads"""
 	
 	def before_save(self):
 		"""Set timestamps before saving"""
@@ -18,4 +18,4 @@ class FacebookLead(Document):
 	def on_update(self):
 		"""Update timestamp on save"""
 		self.updated_at = creqit.utils.now()
-		super().on_update()
+		super(FacebookLeadAds, self).on_update()

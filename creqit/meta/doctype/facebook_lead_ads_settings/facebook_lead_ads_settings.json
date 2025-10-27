@@ -19,6 +19,9 @@
   "column_break_webhook",
   "webhook_is_active",
   "webhook_instructions",
+  "section_break_6",
+  "auto_create_forms",
+  "form_creation_settings",
   "section_break_7",
   "authorization_url",
   "access_token_url",
@@ -97,6 +100,24 @@
    "fieldtype": "HTML",
    "label": "Instructions",
    "options": "<div style='padding: 10px; background: #f8f9fa; border-radius: 4px;'><strong>📋 Setup Instructions:</strong><ol style='margin: 10px 0;'><li>Copy the <strong>Callback URL</strong> and <strong>Verify Token</strong> above</li><li>Go to <a href='https://developers.facebook.com' target='_blank'>Facebook Developers</a></li><li>Select your app → <strong>Webhooks</strong></li><li>Click <strong>Edit Subscription</strong> for <strong>Page</strong></li><li>Paste the URL and Token</li><li>Subscribe to <strong>leadgen</strong> field</li></ol></div>"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break",
+   "label": "Form Creation Settings"
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_create_forms",
+   "fieldtype": "Check",
+   "label": "Auto Create Forms"
+  },
+  {
+   "fieldname": "form_creation_settings",
+   "fieldtype": "HTML",
+   "label": "Form Creation Info",
+   "options": "<div style='padding: 10px; background: #e8f4fd; border-radius: 4px;'><strong>📝 Form Creation:</strong><ul style='margin: 10px 0;'><li>When enabled, forms will be automatically created from Facebook Lead data</li><li>Forms will be published and accessible via web</li><li>Form fields will be mapped from Facebook field data</li><li>Forms will be linked to Facebook Lead Ads documents</li></ul></div>"
   },
   {
    "collapsible": 1,
