@@ -295,7 +295,6 @@ def create_facebook_lead_ads(leadgen_id, page_id, form_id, webhook_data):
 			"facebook_ad_id": lead_details.get("ad_id"),
 			"facebook_adset_id": lead_details.get("adset_id"),
 			"facebook_campaign_id": lead_details.get("campaign_id"),
-			"is_organic": lead_details.get("is_organic", False),
 			"lead_data": json.dumps(webhook_data, indent=2),
 			"field_data": json.dumps(lead_details.get("field_data", []), indent=2),
 			"created_at": creqit.utils.now()
@@ -334,7 +333,7 @@ def fetch_lead_details_from_facebook(leadgen_id, page_id, form_id, access_token)
 	
 	try:
 		# 1. Leadgen Nesnesini Çekme (Müşteri Cevapları ve Ad ID)
-		lead_fields = "field_data,created_time,is_organic,ad_id"
+		lead_fields = "field_data,ad_id"
 		lead_url = f"{base_url}/{leadgen_id}?fields={lead_fields}&access_token={access_token}"
 		
 		meta_logger.info(f"Fetching lead data from: {lead_url}")
@@ -346,25 +345,6 @@ def fetch_lead_details_from_facebook(leadgen_id, page_id, form_id, access_token)
 			return final_data
 		
 		final_data.update(lead_response)
-		
-		# is_organic değerini logla
-		if 'is_organic' in final_data:
-			meta_logger.info(f"Lead is_organic: {final_data['is_organic']} (type: {type(final_data['is_organic'])})")
-		else:
-			meta_logger.warning("No is_organic field in lead response")
-			final_data['is_organic'] = False
-		
-		# Unix zamanını okunabilir formata dönüştür
-		if 'created_time' in final_data:
-			try:
-				# created_time'ı integer'a çevir
-				meta_logger.info(f"Original created_time: {final_data['created_time']} (type: {type(final_data['created_time'])})")
-				created_time = int(final_data['created_time'])
-				final_data['creation_datetime'] = datetime.fromtimestamp(created_time).strftime('%Y-%m-%d %H:%M:%S')
-				meta_logger.info(f"Created time converted: {created_time} -> {final_data['creation_datetime']}")
-			except (ValueError, TypeError) as e:
-				meta_logger.error(f"Error converting created_time: {final_data['created_time']}, error: {str(e)}")
-				final_data['creation_datetime'] = "Invalid Date"
 		
 		# 2. Form Adını ve Status'unu Çekme
 		form_url = f"{base_url}/{form_id}?fields=name,status&access_token={access_token}"
