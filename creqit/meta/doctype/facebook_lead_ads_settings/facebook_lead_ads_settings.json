@@ -13,6 +13,12 @@
   "column_break_4",
   "access_token",
   "token_expiry",
+  "webhook_section",
+  "webhook_callback_url",
+  "webhook_verify_token",
+  "column_break_webhook",
+  "webhook_is_active",
+  "webhook_instructions",
   "section_break_7",
   "authorization_url",
   "access_token_url",
@@ -40,7 +46,7 @@
   },
   {
    "fieldname": "app_secret",
-   "fieldtype": "Password",
+   "fieldtype": "Data",
    "label": "App Secret (Client Secret)",
    "reqd": 1
   },
@@ -50,7 +56,7 @@
   },
   {
    "fieldname": "access_token",
-   "fieldtype": "Password",
+   "fieldtype": "Data",
    "label": "Access Token"
   },
   {
@@ -60,18 +66,52 @@
   },
   {
    "collapsible": 1,
+   "depends_on": "eval:doc.enabled",
+   "fieldname": "webhook_section",
+   "fieldtype": "Section Break",
+   "label": "Webhook Configuration"
+  },
+  {
+   "fieldname": "webhook_callback_url",
+   "fieldtype": "Data",
+   "label": "Webhook Callback URL",
+   "read_only": 1
+  },
+  {
+   "fieldname": "webhook_verify_token",
+   "fieldtype": "Data",
+   "label": "Webhook Verify Token"
+  },
+  {
+   "fieldname": "column_break_webhook",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "webhook_is_active",
+   "fieldtype": "Check",
+   "label": "Webhook Active on Facebook"
+  },
+  {
+   "fieldname": "webhook_instructions",
+   "fieldtype": "HTML",
+   "label": "Instructions",
+   "options": "<div style='padding: 10px; background: #f8f9fa; border-radius: 4px;'><strong>📋 Setup Instructions:</strong><ol style='margin: 10px 0;'><li>Copy the <strong>Callback URL</strong> and <strong>Verify Token</strong> above</li><li>Go to <a href='https://developers.facebook.com' target='_blank'>Facebook Developers</a></li><li>Select your app → <strong>Webhooks</strong></li><li>Click <strong>Edit Subscription</strong> for <strong>Page</strong></li><li>Paste the URL and Token</li><li>Subscribe to <strong>leadgen</strong> field</li></ol></div>"
+  },
+  {
+   "collapsible": 1,
    "fieldname": "section_break_7",
    "fieldtype": "Section Break",
    "label": "OAuth2 Configuration"
   },
   {
-   "default": "https://www.facebook.com/v17.0/dialog/oauth",
+   "default": "https://www.facebook.com/v24.0/dialog/oauth",
    "fieldname": "authorization_url",
    "fieldtype": "Data",
    "label": "Authorization URL"
   },
   {
-   "default": "https://graph.facebook.com/v17.0/oauth/access_token",
+   "default": "https://graph.facebook.com/v24.0/oauth/access_token",
    "fieldname": "access_token_url",
    "fieldtype": "Data",
    "label": "Access Token URL"
@@ -81,13 +121,13 @@
    "fieldtype": "Column Break"
   },
   {
-   "default": "leads_retrieval pages_show_list pages_manage_metadata pages_manage_ads business_management",
+   "default": "leads_retrieval pages_show_list pages_manage_metadata pages_manage_ads business_management ads_management ads_read",
    "fieldname": "scope",
    "fieldtype": "Data",
    "label": "Scope"
   },
   {
-   "default": "v17.0",
+   "default": "v24.0",
    "fieldname": "api_version",
    "fieldtype": "Data",
    "label": "API Version"

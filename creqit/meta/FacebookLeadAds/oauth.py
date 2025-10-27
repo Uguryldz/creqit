@@ -175,6 +175,9 @@ def callback():
 		# Update settings with token
 		settings.set_access_token(access_token, expires_in)
 		
+		# Log expiry date after setting
+		creqit.logger().info(f"Facebook OAuth: Token expiry set to: {settings.token_expiry}")
+		
 		# Reload to verify it was saved
 		settings.reload()
 		
@@ -188,7 +191,11 @@ def callback():
 		# Show success page with auto-close for popup
 		expiry_display = ""
 		if expiry:
-			expiry_display = f'<p style="margin: 5px 0;"><strong>Expires:</strong> {expiry.strftime("%Y-%m-%d %H:%M:%S")}</p>'
+			# Check if expiry is a datetime object or string
+			if hasattr(expiry, 'strftime'):
+				expiry_display = f'<p style="margin: 5px 0;"><strong>Expires:</strong> {expiry.strftime("%Y-%m-%d %H:%M:%S")}</p>'
+			else:
+				expiry_display = f'<p style="margin: 5px 0;"><strong>Expires:</strong> {expiry}</p>'
 		else:
 			expiry_display = '<p style="margin: 5px 0; color: #666;"><em>Long-lived token (no expiry)</em></p>'
 		
@@ -227,13 +234,10 @@ def callback():
 						// If this is a popup, close it and refresh parent
 						if (window.opener && !window.opener.closed) {{
 							try {{
-								// Just reload the parent page, don't redirect
-								if (window.opener.cur_frm && window.opener.cur_frm.doctype === 'Facebook Lead Ads Settings') {{
-									// If parent has the form open, refresh it
+								// Only refresh the form, don't change URL
+								if (window.opener.cur_frm) {{
+									// Refresh the current form
 									window.opener.cur_frm.reload_doc();
-								}} else {{
-									// Otherwise just reload the parent page
-									window.opener.location.reload(true);
 								}}
 							}} catch(e) {{
 								console.log('Could not refresh parent:', e);

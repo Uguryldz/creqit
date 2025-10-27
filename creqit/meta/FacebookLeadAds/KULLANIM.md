@@ -31,10 +31,10 @@
    - **Enabled**: ✓ İşaretle
    - **App ID**: Facebook App ID'ni gir
    - **App Secret**: Facebook App Secret'ı gir
-   - **Authorization URL**: `https://www.facebook.com/v17.0/dialog/oauth` (varsayılan)
-   - **Access Token URL**: `https://graph.facebook.com/v17.0/oauth/access_token` (varsayılan)
-   - **Scope**: `leads_retrieval pages_show_list pages_manage_metadata pages_manage_ads business_management`
-   - **API Version**: `v17.0` (varsayılan)
+   - **Authorization URL**: `https://www.facebook.com/v24.0/dialog/oauth` (varsayılan)
+   - **Access Token URL**: `https://graph.facebook.com/v24.0/oauth/access_token` (varsayılan)
+   - **Scope**: `leads_retrieval pages_show_list pages_manage_metadata pages_manage_ads business_management ads_management ads_read`
+   - **API Version**: `v24.0` (varsayılan)
 4. **Save** butonuna bas
 
 ### Access Token Alma

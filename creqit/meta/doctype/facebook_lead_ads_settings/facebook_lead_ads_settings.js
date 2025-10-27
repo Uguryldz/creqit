@@ -25,6 +25,21 @@ creqit.ui.form.on('Facebook Lead Ads Settings', {
 					refresh_token(frm);
 				}, __('OAuth2'));
 			}
+			
+			// Webhook buttons
+			if (frm.doc.webhook_callback_url) {
+				frm.add_custom_button(__('Copy Callback URL'), function() {
+					copy_to_clipboard(frm.doc.webhook_callback_url, 'Callback URL');
+				}, __('Webhook'));
+				
+				frm.add_custom_button(__('Copy Verify Token'), function() {
+					copy_to_clipboard(frm.doc.webhook_verify_token, 'Verify Token');
+				}, __('Webhook'));
+				
+				frm.add_custom_button(__('Regenerate Verify Token'), function() {
+					regenerate_verify_token(frm);
+				}, __('Webhook'));
+			}
 		}
 		
 		// Show token expiry warning
@@ -49,12 +64,13 @@ creqit.ui.form.on('Facebook Lead Ads Settings', {
 		}
 	},
 	
+	
 	app_id(frm) {
 		if (frm.doc.app_id && !frm.doc.authorization_url) {
-			frm.set_value('authorization_url', 'https://www.facebook.com/v17.0/dialog/oauth');
+			frm.set_value('authorization_url', 'https://www.facebook.com/v24.0/dialog/oauth');
 		}
 		if (frm.doc.app_id && !frm.doc.access_token_url) {
-			frm.set_value('access_token_url', 'https://graph.facebook.com/v17.0/oauth/access_token');
+			frm.set_value('access_token_url', 'https://graph.facebook.com/v24.0/oauth/access_token');
 		}
 	}
 });
@@ -166,6 +182,39 @@ function test_callback_url(frm) {
 		`width=${width},height=${height},left=${left},top=${top},toolbar=no,menubar=no`
 	);
 }
+
+function copy_to_clipboard(text, label) {
+	navigator.clipboard.writeText(text).then(function() {
+		creqit.show_alert({
+			message: __('{0} copied to clipboard!', [label]),
+			indicator: 'green'
+		});
+	}, function(err) {
+		creqit.msgprint(__('Failed to copy: {0}', [err]));
+	});
+}
+
+function regenerate_verify_token(frm) {
+	creqit.confirm(
+		__('This will generate a new verify token. You will need to update it in Facebook. Continue?'),
+		function() {
+		creqit.call({
+			method: 'regenerate_verify_token',
+			doc: frm.doc,
+			callback: function(r) {
+				if (r.message) {
+					creqit.show_alert({
+						message: r.message.message,
+						indicator: 'orange'
+					});
+					frm.reload_doc();
+				}
+			}
+		});
+		}
+	);
+}
+
 
 // Debug helper - use in console
 window.debug_facebook_token = function() {
