@@ -165,14 +165,14 @@ jobs:
           ( tail -f /home/runner/creqit-bench/sites/coverage.xml & ) | grep -q "\/coverage"
 
       - name: Upload JS coverage data
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v5
         if: github.event_name != 'pull_request'
         with:
           name: coverage-js-${{ matrix.container }}
           path: /home/runner/creqit-bench/apps/creqit/.cypress-coverage/clover.xml
 
       - name: Upload python coverage data
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v5
         if: github.event_name != 'pull_request'
         with:
           name: coverage-py-${{ matrix.container }}
