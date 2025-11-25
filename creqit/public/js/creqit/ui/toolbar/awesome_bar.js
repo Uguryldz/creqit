@@ -72,8 +72,7 @@ creqit.search.AwesomeBar = class AwesomeBar {
 
 				me.options = [];
 
-				//1 den 3 çıkarıldı harf sayısı creqit.v1.sevval
-				if (txt && txt.length > 3) {
+				if (txt && txt.length > 1) {
 					if (last_space !== -1) {
 						me.set_specifics(txt.slice(0, last_space), txt.slice(last_space + 1));
 					}
@@ -146,68 +145,47 @@ creqit.search.AwesomeBar = class AwesomeBar {
 	}
 
 	add_help() {
-		// this.options = this.options.filter(item => {
-		// 	return typeof item.route === 'string' && !item.route.startsWith('Workspaces');
-		// });//creqit.v1.sevval //ilk listede workspace ekranları gelmesin diye eklendi
-		
-		if (creqit.session.user !== "Administrator") {
-			const keywordsToShow = ["targeting", "key result", "create budget", "approval processes", "expense request", 
-				"income recognition", "budget item", "department item", "chart", "period item", "sub-budget item", 
-				"currency item", "budget distribution", "exchange rate", "new budget", "supplier", "mahalle", "il", "ilce",
-				"budgetaddress", "company definition", "activity item", "company officials", "period item select", 
-				"email account", "scripted message", "contracts", "activity log", "view log"
-			];
-			this.options = this.options.filter(item => {
-				return keywordsToShow.some(keyword => {
-					const regex = new RegExp(`\\b${keyword}\\b`, 'i'); // 'i' flag means case-insensitive
-					return (
-						(typeof item.match === 'string' && regex.test(item.match)) ||
-						(typeof item.value === 'string' && regex.test(item.value))
-					);
-				});
-			});
-		}
-		// this.options.push({
-		// 	value: __("Help on Search"),
-		// 	index: -10,
-		// 	default: "Help",
-		// 	onclick: function () {
-		// 		var txt =
-		// 		// 	'<table class="table table-bordered">\
-		// 		// 	<tr><td style="width: 50%">' +
-		// 		// 	__("Create a new record") +
-		// 		// 	"</td><td>" +
-		// 		// 	__("new type of document") +
-		// 		// 	"</td></tr>\
-		// 		// 	<tr><td>" +
-		// 		// 	__("List a document type") +
-		// 		// 	"</td><td>" +
-		// 		// 	__("document type..., e.g. customer") +
-		// 		// 	"</td></tr>\
-		// 		// 	<tr><td>" +
-		// 		// 	__("Search in a document type") +
-		// 		// 	"</td><td>" +
-		// 		// 	__("text in document type") +
-		// 		// 	"</td></tr>\
-		// 		// 	<tr><td>" +
-		// 		// 	__("Tags") +
-		// 		// 	"</td><td>" +
-		// 		// 	__("tag name..., e.g. #tag") +
-		// 		// 	"</td></tr>\
-		// 		// 	<tr><td>" +
-		// 		// 	__("Open a module or tool") +
-		// 		// 	"</td><td>" +
-		// 		// 	__("module name...") +
-		// 		// 	"</td></tr>\
-		// 		// 	<tr><td>" +
-		// 		// 	__("Calculate") +
-		// 		// 	"</td><td>" +
-		// 		// 	__("e.g. (55 + 434) / 4 or =Math.sin(Math.PI/2)...") +
-		// 		// 	"</td></tr>\
-		// 		// </table>";
-		// 		creqit.msgprint(txt, __("Search Help"));
-		// 	},
-		// });
+		this.options.push({
+			value: __("Help on Search"),
+			index: -10,
+			default: "Help",
+			onclick: function () {
+				var txt =
+					'<table class="table table-bordered">\
+					<tr><td style="width: 50%">' +
+					__("Create a new record") +
+					"</td><td>" +
+					__("new type of document") +
+					"</td></tr>\
+					<tr><td>" +
+					__("List a document type") +
+					"</td><td>" +
+					__("document type..., e.g. customer") +
+					"</td></tr>\
+					<tr><td>" +
+					__("Search in a document type") +
+					"</td><td>" +
+					__("text in document type") +
+					"</td></tr>\
+					<tr><td>" +
+					__("Tags") +
+					"</td><td>" +
+					__("tag name..., e.g. #tag") +
+					"</td></tr>\
+					<tr><td>" +
+					__("Open a module or tool") +
+					"</td><td>" +
+					__("module name...") +
+					"</td></tr>\
+					<tr><td>" +
+					__("Calculate") +
+					"</td><td>" +
+					__("e.g. (55 + 434) / 4 or =Math.sin(Math.PI/2)...") +
+					"</td></tr>\
+				</table>";
+				creqit.msgprint(txt, __("Search Help"));
+			},
+		});
 	}
 
 	set_specifics(txt, end_txt) {
@@ -244,27 +222,6 @@ creqit.search.AwesomeBar = class AwesomeBar {
 		if (txt.charAt(0) === "#") {
 			options = creqit.tags.utils.get_tags(txt);
 		}
-
-		//administrator olmayan kullanıcılar verilen kelimelerin search işlemini yapabilecek <<creqit.v1.sevval
-		//search kelimeleri
-		if (creqit.session.user !== "Administrator") {
-			const keywordsToShow = ["targeting", "key result", "create budget", "approval processes", "expense request", 
-				"income recognition", "budget item", "department item", "chart", "period item", "sub-budget item", 
-				"currency item", "budget distribution", "exchange rate", "new budget", "supplier", "mahalle", "il", "ilce",
-				"budgetaddress", "company definition", "activity item", "company officials", "period item select", 
-				"email account", "scripted message", "contracts", "activity log", "view log"
-			];
-			options = options.filter(item => {
-				return keywordsToShow.some(keyword => {
-					const regex = new RegExp(`\\b${keyword}\\b`, 'i'); // 'i' flag means case-insensitive
-					return (
-						(typeof item.match === 'string' && regex.test(item.match)) ||
-						(typeof item.value === 'string' && regex.test(item.value))
-					);
-				});
-			});
-		}
-
 		var out = this.deduplicate(options);
 		return out.sort(function (a, b) {
 			return b.index - a.index;
@@ -338,49 +295,45 @@ creqit.search.AwesomeBar = class AwesomeBar {
 		if (txt.charAt(0) === "#") {
 			return;
 		}
-		//sadece administrator genel arama yapabilecek <<creqit.v1.sevval
-		if(creqit.session.user === "Administrator"){
-			this.options.push({
-				label: `
-					<span class="flex justify-between text-medium">
-						<span class="ellipsis">${__("Search for {0}", [creqit.utils.xss_sanitise(txt).bold()])}</span>
-						<kbd>↵</kbd>
-					</span>
-				`,
-				value: __("Search for {0}", [txt]),
-				match: txt,
-				index: 100,
-				default: "Search",
-				onclick: function () {
-					creqit.searchdialog.search.init_search(txt, "global_search");
-				},
-			});
-		}
+
+		this.options.push({
+			label: `
+				<span class="flex justify-between text-medium">
+					<span class="ellipsis">${__("Search for {0}", [creqit.utils.xss_sanitise(txt).bold()])}</span>
+					<kbd>↵</kbd>
+				</span>
+			`,
+			value: __("Search for {0}", [txt]),
+			match: txt,
+			index: 100,
+			default: "Search",
+			onclick: function () {
+				creqit.searchdialog.search.init_search(txt, "global_search");
+			},
+		});
 	}
 
 	make_search_in_current(txt) {
-		if(creqit.session.user === "Administrator"){
-			var route = creqit.get_route();
-			if (route[0] === "List" && txt.indexOf(" in") === -1) {
-				// search in title field
-				const doctype = creqit.container.page?.list_view?.doctype;
-				if (!doctype) return;
-				var meta = creqit.get_meta(doctype);
-				var search_field = meta.title_field || "name";
-				var options = {};
-				options[search_field] = ["like", "%" + txt + "%"];
-				this.options.push({
-					label: __("Find {0} in {1}", [txt.bold(), __(route[1]).bold()]),
-					value: __("Find {0} in {1}", [txt, __(route[1])]),
-					route_options: options,
-					onclick: function () {
-						cur_list.show();
-					},
-					index: 90,
-					default: "Current",
-					match: txt,
-				});
-			}
+		var route = creqit.get_route();
+		if (route[0] === "List" && txt.indexOf(" in") === -1) {
+			// search in title field
+			const doctype = creqit.container.page?.list_view?.doctype;
+			if (!doctype) return;
+			var meta = creqit.get_meta(doctype);
+			var search_field = meta.title_field || "name";
+			var options = {};
+			options[search_field] = ["like", "%" + txt + "%"];
+			this.options.push({
+				label: __("Find {0} in {1}", [txt.bold(), __(route[1]).bold()]),
+				value: __("Find {0} in {1}", [txt, __(route[1])]),
+				route_options: options,
+				onclick: function () {
+					cur_list.show();
+				},
+				index: 90,
+				default: "Current",
+				match: txt,
+			});
 		}
 	}
 
